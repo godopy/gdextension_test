@@ -8,8 +8,6 @@ class GDExtensionTestCase : public Object {
 
 private:
     bool m_bool;
-    int8_t m_int8;
-    int16_t m_int16;
     int32_t m_int32;
     int64_t m_int64;
     float m_float32;
@@ -55,16 +53,39 @@ protected:
 public:
     void atomic_args(const bool p_bool, const int32_t p_int32, const int64_t p_int64, const float p_float32,
                      const double p_float64, const String &p_string);
+    GDVIRTUAL6(_atomic_args, bool, int32_t, int64_t, float, double, String)
+    void atomic_args_virtual_call() {
+        GDVIRTUAL_CALL(_atomic_args, m_bool, m_int32, m_int64, m_float32, m_float64, m_string);
+    }
+
     void math_args_1(const Vector2 &p_vector2, const Vector2i &p_vector2i, const Rect2 &p_rect2,
                      const Rect2i &p_rect2i, const Vector3 &p_vector3, const Vector3i &p_vector3i,
                      const Transform2D &p_transform2d, const Vector4 &p_vector4, const Vector4i &p_vector4i);
 
     bool get_bool() const { return m_bool; }
+    GDVIRTUAL0R(bool, _get_bool)
+    void get_bool_virtual_call() { GDVIRTUAL_CALL(_get_bool, m_bool); }
+
     int32_t get_int32() const { return m_int32; }
+    GDVIRTUAL0R(int32_t, _get_int32)
+    void get_int32_virtual_call() { GDVIRTUAL_CALL(_get_int32, m_int32); }
+
     int64_t get_int64() const { return m_int64; }
+    GDVIRTUAL0R(int64_t, _get_int64)
+    void get_int64_virtual_call() { GDVIRTUAL_CALL(_get_int64, m_int64); }
+
     float get_float32() const { return m_float32; }
+    GDVIRTUAL0R(float, _get_float32)
+    void get_float32_virtual_call() { GDVIRTUAL_CALL(_get_float32, m_float32); }
+
     double get_float64() const { return m_float64; }
+    GDVIRTUAL0R(double, _get_float64)
+    void get_float64_virtual_call() { GDVIRTUAL_CALL(_get_float64, m_float64); }
+
     String get_string() const { return m_string; }
+    GDVIRTUAL0RC(String, _get_string)
+    void get_string_virtual_call() { GDVIRTUAL_CALL(_get_string, m_string); }
+
     Vector2 get_vector2() const { return m_vector2; }
     Vector2i get_vector2i() const { return m_vector2i; }
     Rect2 get_rect2() const { return m_rect2; }

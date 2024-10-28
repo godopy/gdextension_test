@@ -28,15 +28,37 @@ void GDExtensionTestCase::math_args_1(const Vector2 &p_vector2, const Vector2i &
 void GDExtensionTestCase::_bind_methods() {
     ClassDB::bind_method(D_METHOD("atomic_args", "p_bool", "p_int32", "p_int64", "p_float32", "p_float64", "p_string"),
                          &GDExtensionTestCase::atomic_args);
+    GDVIRTUAL_BIND(_atomic_args, "p_bool", "p_int32", "p_int64", "p_float32", "p_float64", "p_string");
+    ClassDB::bind_method(D_METHOD("atomic_args_virtual_call"), &GDExtensionTestCase::atomic_args_virtual_call);
+
     ClassDB::bind_method(D_METHOD("math_args_1", "p_vector2", "p_vector2i", "p_rect2", "p_rect2i", "p_vector3",
                                   "p_vector3i", "p_transform2d", "p_vector4", "p_vector4i"),
                          &GDExtensionTestCase::math_args_1);
+
     ClassDB::bind_method(D_METHOD("get_bool"), &GDExtensionTestCase::get_bool);
+    GDVIRTUAL_BIND(_get_bool);
+    ClassDB::bind_method(D_METHOD("get_bool_virtual_call"), &GDExtensionTestCase::get_bool_virtual_call);
+
     ClassDB::bind_method(D_METHOD("get_int32"), &GDExtensionTestCase::get_int32);
+    GDVIRTUAL_BIND(_get_int32);
+    ClassDB::bind_method(D_METHOD("get_int32_virtual_call"), &GDExtensionTestCase::get_int32_virtual_call);
+
     ClassDB::bind_method(D_METHOD("get_int64"), &GDExtensionTestCase::get_int64);
+    GDVIRTUAL_BIND(_get_int64);
+    ClassDB::bind_method(D_METHOD("get_int64_virtual_call"), &GDExtensionTestCase::get_int64_virtual_call);
+
     ClassDB::bind_method(D_METHOD("get_float32"), &GDExtensionTestCase::get_float32);
+    GDVIRTUAL_BIND(_get_float32);
+    ClassDB::bind_method(D_METHOD("get_float32_virtual_call"), &GDExtensionTestCase::get_float32_virtual_call);
+
     ClassDB::bind_method(D_METHOD("get_float64"), &GDExtensionTestCase::get_float64);
+    GDVIRTUAL_BIND(_get_float64);
+    ClassDB::bind_method(D_METHOD("get_float64_virtual_call"), &GDExtensionTestCase::get_float64_virtual_call);
+
     ClassDB::bind_method(D_METHOD("get_string"), &GDExtensionTestCase::get_string);
+    GDVIRTUAL_BIND(_get_string);
+    ClassDB::bind_method(D_METHOD("get_string_virtual_call"), &GDExtensionTestCase::get_string_virtual_call);
+
     ClassDB::bind_method(D_METHOD("get_vector2"), &GDExtensionTestCase::get_vector2);
     ClassDB::bind_method(D_METHOD("get_vector2i"), &GDExtensionTestCase::get_vector2i);
     ClassDB::bind_method(D_METHOD("get_rect2"), &GDExtensionTestCase::get_rect2);
