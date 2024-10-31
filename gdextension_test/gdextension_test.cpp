@@ -182,12 +182,14 @@ void GDExtensionTestCase::_bind_methods() {
 
 
     ClassDB::bind_method(D_METHOD("packed_array_args", "p_packed_byte_array", "p_packed_int32_array",
-                                  "p_packed_int64_array", "p_packed_float32_array", "p_packed_string_array",
-                                  "p_packed_vector2_array", "p_packed_vector3_array", "p_packed_color_array",
-                                  "p_packed_vector4_array"), &GDExtensionTestCase::packed_array_args);
+                                  "p_packed_int64_array", "p_packed_float32_array", "p_packed_float64_array",
+                                  "p_packed_string_array", "p_packed_vector2_array", "p_packed_vector3_array",
+                                  "p_packed_color_array", "p_packed_vector4_array"),
+                         &GDExtensionTestCase::packed_array_args);
     GDVIRTUAL_BIND(_packed_array_args, "p_packed_byte_array", "p_packed_int32_array", "p_packed_int64_array",
-                   "p_packed_float32_array", "p_packed_string_array", "p_packed_vector2_array",
-                   "p_packed_vector3_array", "p_packed_color_array", "p_packed_vector4_array");
+                   "p_packed_float32_array",  "p_packed_float64_array", "p_packed_string_array",
+                   "p_packed_vector2_array", "p_packed_vector3_array", "p_packed_color_array",
+                   "p_packed_vector4_array");
     ClassDB::bind_method(D_METHOD("packed_array_args_virtual_call"),
                          &GDExtensionTestCase::packed_array_args_virtual_call);
 
@@ -196,8 +198,7 @@ void GDExtensionTestCase::_bind_methods() {
                                   "p_uint8_pointer2", "p_uint8_pointer3", "p_uint8_pointer4"),
                          &GDExtensionTestCase::other_args_1);
     GDVIRTUAL_BIND(_other_args_1, "p_variant", "p_pointer", "r_pointer", "p_uint8_pointer", "r_uint8_pointer",
-                   "p_uint8_ptr_pointer", "r_uint8_ptr_pointer", "r_float32", "r_int32", "p_audio_frame",
-                   "p_caret_info", "p_glyph", "p_object_id");
+                   "p_uint8_ptr_pointer", "r_uint8_ptr_pointer", "r_float32", "r_int32");
     ClassDB::bind_method(D_METHOD("other_args_1_virtual_call"), &GDExtensionTestCase::other_args_1_virtual_call);
 
 
@@ -455,6 +456,8 @@ void GDExtensionTestCase::_bind_methods() {
 
     ClassDB::bind_method(D_METHOD("get_ps2d_shape_result"), &GDExtensionTestCase::get_ps2d_shape_result);
     GDVIRTUAL_BIND(_get_ps2d_shape_result);
+    ClassDB::bind_method(D_METHOD("get_ps2d_shape_result_virtual_call"),
+                         &GDExtensionTestCase::get_ps2d_shape_result_virtual_call);
 
     ClassDB::bind_method(D_METHOD("get_ps3d_motion_collision"), &GDExtensionTestCase::get_ps3d_motion_collision);
     GDVIRTUAL_BIND(_get_ps3d_motion_collision);

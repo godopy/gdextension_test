@@ -362,7 +362,7 @@ public:
         m_pointer1 = ret;
     }
 
-    GDExtensionConstPtr<const uint8_t> get_uint8_pointer1() const { return m_uint8_arr1; }
+    GDExtensionConstPtr<const void> get_uint8_pointer1() const { return (const void *)m_uint8_arr1; }
     GDVIRTUAL0RC(GDExtensionConstPtr<const uint8_t>, _get_uint8_pointer1)
     void get_uint8_pointer1_virtual_call() {
         GDExtensionConstPtr<const uint8_t> ret = nullptr;
@@ -376,7 +376,7 @@ public:
         }
     }
 
-    GDExtensionPtr<uint8_t> get_uint8_pointer2() const { return (uint8_t *)m_uint8_arr2; }
+    GDExtensionPtr<void> get_uint8_pointer2() const { return (void *)m_uint8_arr2; }
     GDVIRTUAL0RC(GDExtensionPtr<uint8_t>, _get_uint8_pointer2)
     void get_uint8_pointer2_virtual_call() {
         GDExtensionPtr<uint8_t> ret = nullptr;
@@ -390,7 +390,7 @@ public:
         }
     }
 
-    GDExtensionConstPtr<const uint8_t *> get_uint8_pointer3() const { return (const uint8_t **)&m_uint8_arr3; }
+    GDExtensionConstPtr<const void> get_uint8_pointer3() const { return (const void *)&m_uint8_arr3; }
     GDVIRTUAL0RC(GDExtensionConstPtr<const uint8_t>, _get_uint8_pointer3)
     void get_uint8_pointer3_virtual_call() {
         GDExtensionConstPtr<const uint8_t> ret = nullptr;
@@ -404,7 +404,7 @@ public:
         }
     }
 
-    GDExtensionPtr<uint8_t *> get_uint8_pointer4() const { return (uint8_t **)&m_uint8_arr4; }
+    GDExtensionPtr<void> get_uint8_pointer4() const { return (void *)&m_uint8_arr4; }
     GDVIRTUAL0RC(GDExtensionPtr<uint8_t>, _get_uint8_pointer4)
     void get_uint8_pointer4_virtual_call() {
         GDExtensionPtr<uint8_t> ret = nullptr;
@@ -418,7 +418,7 @@ public:
         }
     }
 
-    GDExtensionConstPtr<const AudioFrame> get_audio_frame() const { return &m_audio_frame; }
+    GDExtensionConstPtr<const void> get_audio_frame() const { return &m_audio_frame; }
     GDVIRTUAL0RC(GDExtensionConstPtr<const AudioFrame>, _get_audio_frame)
     void get_audio_frame_virtual_call() {
         GDExtensionConstPtr<const AudioFrame> ret = nullptr;
@@ -426,7 +426,7 @@ public:
         m_audio_frame = *ret;
     }
 
-    GDExtensionConstPtr<const CaretInfo> get_caret_info() const { return &m_caret_info; }
+    GDExtensionConstPtr<const void> get_caret_info() const { return &m_caret_info; }
     GDVIRTUAL0RC(GDExtensionConstPtr<const CaretInfo>, _get_caret_info)
     void get_caret_info_virtual_call() {
         GDExtensionConstPtr<const CaretInfo> ret = nullptr;
@@ -434,7 +434,7 @@ public:
         m_caret_info = *ret;
     }
 
-    GDExtensionConstPtr<const Glyph> get_glyph() const { return &m_glyph; }
+    GDExtensionConstPtr<const void> get_glyph() const { return &m_glyph; }
     GDVIRTUAL0RC(GDExtensionConstPtr<const Glyph>, _get_glyph)
     void get_glyph_virtual_call() {
         GDExtensionConstPtr<const Glyph> ret = nullptr;
@@ -450,7 +450,7 @@ public:
         m_object_id = *(const ObjectID *)(const void *)ret;
     }
 
-    GDExtensionConstPtr<const PhysicsServer2DExtensionMotionResult> get_ps2d_motion_result() const {
+    GDExtensionConstPtr<const void> get_ps2d_motion_result() const {
         return &m_ps2d_motion_result;
     }
     GDVIRTUAL0RC(GDExtensionConstPtr<const PhysicsServer2DExtensionMotionResult>, _get_ps2d_motion_result)
@@ -460,7 +460,7 @@ public:
         m_ps2d_motion_result = *ret;
     }
 
-    GDExtensionConstPtr<const PhysicsServer2DExtensionRayResult> get_ps2d_ray_result() const {
+    GDExtensionConstPtr<const void> get_ps2d_ray_result() const {
         return &m_ps2d_ray_result;
     }
     GDVIRTUAL0RC(GDExtensionConstPtr<const PhysicsServer2DExtensionRayResult>, _get_ps2d_ray_result)
@@ -471,7 +471,7 @@ public:
     }
 
 
-    GDExtensionConstPtr<const PhysicsServer2DExtensionShapeRestInfo> get_ps2d_shape_rest_info() const {
+    GDExtensionConstPtr<const void> get_ps2d_shape_rest_info() const {
         return &m_ps2d_shape_rest_info;
     }
     GDVIRTUAL0RC(GDExtensionConstPtr<const PhysicsServer2DExtensionShapeRestInfo>, _get_ps2d_shape_rest_info)
@@ -482,7 +482,7 @@ public:
     }
 
 
-    GDExtensionConstPtr<const PhysicsServer2DExtensionShapeResult> get_ps2d_shape_result() const {
+    GDExtensionConstPtr<const void> get_ps2d_shape_result() const {
         return &m_ps2d_shape_result;
     }
     GDVIRTUAL0RC(GDExtensionConstPtr<const PhysicsServer2DExtensionShapeResult>, _get_ps2d_shape_result)
@@ -493,7 +493,7 @@ public:
     }
 
 
-    GDExtensionConstPtr<const PhysicsServer3DExtensionMotionCollision> get_ps3d_motion_collision() const {
+    GDExtensionConstPtr<const void> get_ps3d_motion_collision() const {
         return &m_ps3d_motion_collision;
     }
     GDVIRTUAL0RC(GDExtensionConstPtr<const PhysicsServer3DExtensionMotionCollision>, _get_ps3d_motion_collision)
@@ -504,7 +504,7 @@ public:
     }
 
 
-    GDExtensionConstPtr<const PhysicsServer3DExtensionMotionResult> get_ps3d_motion_result() const {
+    GDExtensionConstPtr<const void> get_ps3d_motion_result() const {
         return &m_ps3d_motion_result;
     }
     GDVIRTUAL0RC(GDExtensionConstPtr<const PhysicsServer3DExtensionMotionResult>, _get_ps3d_motion_result)
@@ -515,7 +515,7 @@ public:
     }
 
 
-    GDExtensionConstPtr<const PhysicsServer3DExtensionRayResult> get_ps3d_ray_result() const {
+    GDExtensionConstPtr<const void> get_ps3d_ray_result() const {
         return &m_ps3d_ray_result;
     }
     GDVIRTUAL0RC(GDExtensionConstPtr<const PhysicsServer3DExtensionRayResult>, _get_ps3d_ray_result)
@@ -526,7 +526,7 @@ public:
     }
 
 
-    GDExtensionConstPtr<const PhysicsServer3DExtensionShapeRestInfo> get_ps3d_shape_rest_info() const {
+    GDExtensionConstPtr<const void> get_ps3d_shape_rest_info() const {
         return &m_ps3d_shape_rest_info;
     }
     GDVIRTUAL0RC(GDExtensionConstPtr<const PhysicsServer3DExtensionShapeRestInfo>, _get_ps3d_shape_rest_info)
@@ -537,7 +537,7 @@ public:
     }
 
 
-    GDExtensionConstPtr<const PhysicsServer3DExtensionShapeResult> get_ps3d_shape_result() const {
+    GDExtensionConstPtr<const void> get_ps3d_shape_result() const {
         return &m_ps3d_shape_result;
     }
     GDVIRTUAL0RC(GDExtensionConstPtr<const PhysicsServer3DExtensionShapeResult>, _get_ps3d_shape_result)
@@ -548,7 +548,7 @@ public:
     }
 
 
-    GDExtensionConstPtr<const ScriptLanguageExtensionProfilingInfo> get_script_language_profiling_info() const {
+    GDExtensionConstPtr<const void> get_script_language_profiling_info() const {
         return &m_script_language_profiling_info;
     }
     GDVIRTUAL0RC(GDExtensionConstPtr<const ScriptLanguageExtensionProfilingInfo>, _get_script_language_profiling_info)
