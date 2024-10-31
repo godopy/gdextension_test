@@ -356,7 +356,7 @@ void GDExtensionTestCase::_bind_methods() {
 
     ClassDB::bind_method(D_METHOD("get_packed_float32_array"), &GDExtensionTestCase::get_packed_float32_array);
     GDVIRTUAL_BIND(_get_packed_float32_array);
-    ClassDB::bind_method(D_METHOD("get_packed_byte_float32_virtual_call"),
+    ClassDB::bind_method(D_METHOD("get_packed_float32_array_virtual_call"),
                          &GDExtensionTestCase::get_packed_float32_array_virtual_call);
 
     ClassDB::bind_method(D_METHOD("get_packed_float64_array"), &GDExtensionTestCase::get_packed_float64_array);
