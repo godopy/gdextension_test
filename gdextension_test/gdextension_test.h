@@ -351,7 +351,7 @@ public:
     void get_pointer1_virtual_call() {
         GDExtensionConstPtr<const void> ret = nullptr;
         GDVIRTUAL_CALL(_get_pointer1, ret);
-        m_pointer1 = ret.data;
+        m_pointer1 = (void *)ret.data;
     }
 
     GDExtensionPtr<void> get_pointer2() const { return m_pointer2; }
