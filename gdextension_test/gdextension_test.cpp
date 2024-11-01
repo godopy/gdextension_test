@@ -79,10 +79,10 @@ void GDExtensionTestCase::other_args_1(const Variant &p_variant, GDExtensionCons
                                        GDExtensionConstPtr<const uint8_t> p_uint8_pointer3,
                                        GDExtensionConstPtr<const uint8_t> p_uint8_pointer4) {
     m_variant = p_variant;
-    m_pointer1 = (void *)(const void *)p_pointer1;
-    m_pointer2 = (void *)(const void *)p_pointer2;
+    m_pointer1 = (void *)p_pointer1.data;
+    m_pointer2 = (void *)p_pointer2.data;
 
-    const uint8_t *ptr = (const uint8_t *)p_uint8_pointer1;
+    const uint8_t *ptr = p_uint8_pointer1.data;
     uint8_t *ptrw = m_uint8_arr1;
     for (size_t i = 0; i < 8; i++) {
         *ptrw = *ptr;
@@ -91,7 +91,7 @@ void GDExtensionTestCase::other_args_1(const Variant &p_variant, GDExtensionCons
     }
     m_uint8 = p_uint8_pointer1[0];
 
-    ptr = (const uint8_t *)p_uint8_pointer2;
+    ptr = p_uint8_pointer2.data;
     ptrw = m_uint8_arr2;
     for (size_t i = 0; i < 8; i++) {
         *ptrw = *ptr;
@@ -99,7 +99,7 @@ void GDExtensionTestCase::other_args_1(const Variant &p_variant, GDExtensionCons
         ptr++;
     }
 
-    ptr = (const uint8_t *)p_uint8_pointer3;
+    ptr = p_uint8_pointer3.data;
     ptrw = m_uint8_arr3;
     for (size_t i = 0; i < 8; i++) {
         *ptrw = *ptr;
@@ -107,7 +107,7 @@ void GDExtensionTestCase::other_args_1(const Variant &p_variant, GDExtensionCons
         ptr++;
     }
 
-    ptr = (const uint8_t *)p_uint8_pointer4;
+    ptr = p_uint8_pointer4.data;
     ptrw = m_uint8_arr4;
     for (size_t i = 0; i < 8; i++) {
         *ptrw = *ptr;
