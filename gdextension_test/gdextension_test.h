@@ -351,7 +351,7 @@ public:
     void get_pointer1_virtual_call() {
         GDExtensionConstPtr<const void> ret = nullptr;
         GDVIRTUAL_CALL(_get_pointer1, ret);
-        m_pointer1 = (void *)(const void *)ret;
+        m_pointer1 = ret.data;
     }
 
     GDExtensionPtr<void> get_pointer2() const { return m_pointer2; }
@@ -359,7 +359,7 @@ public:
     void get_pointer2_virtual_call() {
         GDExtensionPtr<void> ret = nullptr;
         GDVIRTUAL_CALL(_get_pointer2, ret);
-        m_pointer1 = ret;
+        m_pointer2 = ret.data;
     }
 
     GDExtensionConstPtr<const void> get_uint8_pointer1() const { return (const void *)m_uint8_arr1; }
@@ -367,7 +367,7 @@ public:
     void get_uint8_pointer1_virtual_call() {
         GDExtensionConstPtr<const uint8_t> ret = nullptr;
         GDVIRTUAL_CALL(_get_uint8_pointer1, ret);
-        const uint8_t *ptr = (const uint8_t *)ret;
+        const uint8_t *ptr = ret.data;
         uint8_t *ptrw = m_uint8_arr1;
         for (size_t i = 0; i < 8; i++) {
             *ptrw = *ptr;
@@ -381,7 +381,7 @@ public:
     void get_uint8_pointer2_virtual_call() {
         GDExtensionPtr<uint8_t> ret = nullptr;
         GDVIRTUAL_CALL(_get_uint8_pointer2, ret);
-        uint8_t *ptr = (uint8_t *)ret;
+        uint8_t *ptr = ret.data;
         uint8_t *ptrw = m_uint8_arr2;
         for (size_t i = 0; i < 8; i++) {
             *ptrw = *ptr;
@@ -395,7 +395,7 @@ public:
     void get_uint8_pointer3_virtual_call() {
         GDExtensionConstPtr<const uint8_t> ret = nullptr;
         GDVIRTUAL_CALL(_get_uint8_pointer3, ret);
-        const uint8_t *ptr = (const uint8_t *)ret;
+        const uint8_t *ptr = ret.data;
         uint8_t *ptrw = m_uint8_arr3;
         for (size_t i = 0; i < 8; i++) {
             *ptrw = *ptr;
@@ -409,7 +409,7 @@ public:
     void get_uint8_pointer4_virtual_call() {
         GDExtensionPtr<uint8_t> ret = nullptr;
         GDVIRTUAL_CALL(_get_uint8_pointer4, ret);
-        uint8_t *ptr = (uint8_t *)ret;
+        uint8_t *ptr = ret.data;
         uint8_t *ptrw = m_uint8_arr4;
         for (size_t i = 0; i < 8; i++) {
             *ptrw = *ptr;
